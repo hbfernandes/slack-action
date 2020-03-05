@@ -1,0 +1,36 @@
+{
+  "name": "slack-action",
+  "version": "1.0.0",
+  "description": "JavaScript Action that interacts with slack",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**",
+    "package": "ncc build src/index.js -o dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbfernandes/slack-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript",
+    "Slack"
+  ],
+  "author": "hbfernandes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hbfernandes/slack-action/issues"
+  },
+  "homepage": "https://github.com/hbfernandes/slack-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@slack/web-api": "^5.7.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.21.1",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  }
+}

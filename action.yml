@@ -1,0 +1,9 @@
+name: 'Slack Action'
+description: 'Provides Slack interaction'
+inputs:
+  args:
+    description: 'Post Message arguments'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
