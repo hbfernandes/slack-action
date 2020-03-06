@@ -4513,10 +4513,13 @@ method.forEach(methodPart => {
   }
 })
 
-methodFn(args).catch(error => {
-  console.log(error.data)
-  core.setFailed(error.message)
-})
+methodFn(args).then(
+  result => console.log(result),
+  error => {
+    console.log(error.data)
+    core.setFailed(error.message)
+  }
+)
 
 
 /***/ }),
