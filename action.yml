@@ -1,9 +1,14 @@
 name: 'Slack Action'
-description: 'Provides Slack interaction'
+description: 'Provides access to the Slack WebApi'
 inputs:
+  method:
+    description: 'The slack web api method to call'
+    required: false
+    default: 'chat.postMessage'
   args:
-    description: 'Post Message arguments'
-    required: true
+    description: 'The api method arguments'
+    required: false
+    default: '{}'
 runs:
   using: 'node12'
   main: 'dist/index.js'
