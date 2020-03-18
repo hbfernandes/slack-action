@@ -8,7 +8,7 @@ This actions performs it's actions using a slack bot token. To acquire one you n
 Send a basic text message to a channel.
 ```
 - name: Slack Message                     
-  uses: hbfernandes/slack-action@master
+  uses: hbfernandes/slack-action@1.0
   env:
     SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}   
   with:
@@ -25,7 +25,7 @@ By default the api method is [chat.postMessage](https://api.slack.com/methods/ch
 
 ```
 - name: Slack Message                     
-  uses: hbfernandes/slack-action@master   
+  uses: hbfernandes/slack-action@1.0   
   with:
     method: conversations.list
 ```
@@ -35,7 +35,7 @@ The args parameter expects a string in the JSON format with any parameter that t
 A more complex message:
 ```
 - name: Slack Message                     
-  uses: hbfernandes/slack-action@master   
+  uses: hbfernandes/slack-action@1.0   
   with:
     args: |
       {
