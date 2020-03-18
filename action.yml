@@ -9,6 +9,9 @@ inputs:
     description: 'The api method arguments'
     required: false
     default: '{}'
+branding:
+  icon: message-circle
+  color: gray-dark
 runs:
   using: 'node12'
   main: 'dist/index.js'
