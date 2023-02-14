@@ -1,0 +1,45 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Basic Message
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "development",
+              "text": "testing slack messaging"
+            }
+      - name: Advanced Message
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "development",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "#36a64f",
+                  "pretext": "Built branch ${{ github.ref }}",
+                  "author_name": "${{ github.actor }}",
+                  "author_link": "http://flickr.com/bobby/",
+                  "author_icon": "https://placeimg.com/16/16/people",
+                  "title": "${{ github.workflow }}",
+                  "title_link": "https://api.slack.com/",
+                  "text": "Optional `text` that appears within the attachment",
+                  "thumb_url": "http://placekitten.com/g/200/200",
+                  "footer": "Github Actions",
+                  "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
+                  "ts": 123456789
+                }
+              ]
+            }
