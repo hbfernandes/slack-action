@@ -8,17 +8,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Basic Message
-        uses: hbfernandes/slack-action@1.0
+        uses: ./
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
           args: |
             {
               "channel": "development",
-              "text": "testing slack messaging"
+              "text": "Testing slack messaging"
             }
       - name: Advanced Message
-        uses: hbfernandes/slack-action@1.0
+        uses: ./
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
