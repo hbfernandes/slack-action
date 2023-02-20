@@ -9,6 +9,9 @@ inputs:
     description: 'The api method arguments'
     required: false
     default: '{}'
+outputs:
+  data:
+    description: JSON-formated method results
 branding:
   icon: message-circle
   color: gray-dark
